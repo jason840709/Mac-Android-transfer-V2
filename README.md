@@ -13,6 +13,15 @@
   <strong>Version 0.7.0 · macOS 14+ · Apple Silicon · MIT License</strong>
 </p>
 
+
+## 畫面預覽
+
+### 主畫面 / 連接指引
+
+![Mac Android Transfer V2 畫面預覽：顯示 Android 手機連接指引與傳輸介面](docs/screenshots/mac-android-transfer-v2-main.png)
+
+上圖展示 App 的主畫面：在尚未連接裝置時，會直接提示使用者解鎖 Android 手機、切換到「檔案傳輸 / Android Auto」模式並允許存取要求；成功連線後即可切換到檔案瀏覽與雙向傳輸流程。這能讓第一次接觸專案的人立刻理解產品用途與實際操作樣貌。
+
 ## 功能
 
 - 直接瀏覽 Android 手機的 MTP 共享儲存空間。
