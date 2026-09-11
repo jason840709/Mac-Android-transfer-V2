@@ -1,0 +1,7 @@
+            fulfillPromise: { object, destinationDirectory, promisedName in
+                try await model.fulfillFilePromise(
+                    object: object,
+                    destinationDirectory: destinationDirectory,
+                    promisedName: promisedName
+                )
+            }

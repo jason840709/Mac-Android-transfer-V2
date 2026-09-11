@@ -1,0 +1,28 @@
+#if canImport(AppKit)
+    func fulfillFilePromise(
+        object: MTPObject,
+        destinationDirectory: URL,
+        promisedName: String
+    ) async throws {
+        guard connectionState == .connected, let deviceIdentity = currentDeviceIdentity else {
+            throw AppModelError(
+                message: NSLocalizedString("error.no_device_connected", comment: "")
+            )
+        }
+        let finalName = FilenamePolicy.sanitized(promisedName)
+        let destination = LocalTransferDestination(
+            directoryPath: destinationDirectory.path,
+            securityScopedBookmark: nil,
+            preferredTopLevelName: finalName
+        )
+        let job = TransferJob(
+            request: .download(source: object, destination: destination),
+            deviceIdentity: deviceIdentity,
+            displayName: finalName,
+            direction: .download,
+            totalBytes: object.isFolder ? 0 : object.size
+        )
+        try await transfers.enqueueAndWait(job)
+    }
+#endif
+

@@ -1,0 +1,117 @@
+name: MTPBridge
+options:
+  bundleIdPrefix: io.github.mtpbridge
+  deploymentTarget:
+    macOS: "14.0"
+  createIntermediateGroups: true
+  groupSortPosition: top
+configs:
+  Debug: debug
+  Release: release
+configFiles:
+  Debug: Config/Debug.xcconfig
+  Release: Config/Release.xcconfig
+settings:
+  base:
+    DEVELOPMENT_LANGUAGE: en
+    SUPPORTS_MACCATALYST: NO
+    GENERATE_INFOPLIST_FILE: NO
+targets:
+  MTPDeviceInsertionAgent:
+    type: application
+    platform: macOS
+    sources:
+      - path: Sources/MTPDeviceWatcher
+        excludes:
+          - MTPDeviceWatcher-Bridging-Header.h
+          - mtp_device_watcher.h
+      - path: Sources/MTPDeviceWatcher/mtp_device_watcher.h
+        buildPhase: none
+      - path: Sources/MTPBridgeCore/DeviceAgentLaunchCandidatePolicy.swift
+    info:
+      path: Config/DeviceInsertionAgent-Info.plist
+    entitlements:
+      path: DeviceInsertionAgent.entitlements
+    settings:
+      base:
+        PRODUCT_NAME: Android 傳輸 V2 裝置偵測器
+        PRODUCT_BUNDLE_IDENTIFIER: io.github.mtpbridge.DeviceInsertionAgentV2
+        EXECUTABLE_NAME: AndroidTransferV2DeviceAgent
+        SWIFT_OBJC_BRIDGING_HEADER: $(SRCROOT)/Sources/MTPDeviceWatcher/MTPDeviceWatcher-Bridging-Header.h
+        HEADER_SEARCH_PATHS: $(inherited) $(SRCROOT)/Sources/MTPDeviceWatcher $(SRCROOT)/Vendor/include
+        LIBRARY_SEARCH_PATHS: $(inherited) $(SRCROOT)/Vendor/lib
+        LD_RUNPATH_SEARCH_PATHS: $(inherited) @executable_path/../Frameworks
+        OTHER_LDFLAGS: $(inherited) -lmtp -lusb-1.0 -framework IOKit -framework CoreFoundation
+        ENABLE_APP_SANDBOX: YES
+    preBuildScripts:
+      - name: Embed and sign agent libmtp dependencies
+        script: |
+          "$SRCROOT/Scripts/embed-dylibs.sh"
+        basedOnDependencyAnalysis: false
+        inputFiles:
+          - $(SRCROOT)/Vendor/lib/libmtp.dylib
+          - $(SRCROOT)/Vendor/lib/libusb-1.0.dylib
+        outputFiles:
+          - $(TARGET_BUILD_DIR)/$(FRAMEWORKS_FOLDER_PATH)/libmtp.dylib
+          - $(TARGET_BUILD_DIR)/$(FRAMEWORKS_FOLDER_PATH)/libusb-1.0.dylib
+
+  MTPBridge:
+    type: application
+    platform: macOS
+    dependencies:
+      - target: MTPDeviceInsertionAgent
+    sources:
+      - path: Sources/MTPBridgeApp
+        excludes:
+          - MTPBridge-Bridging-Header.h
+      - path: Sources/MTPBridgeCore
+      - path: Sources/MTPBridgeCLib/mtp_bridge.c
+      - path: Sources/MTPBridgeCLib/include/mtp_bridge.h
+        buildPhase: none
+      - path: Sources/MTPDeviceRegistration/device_registration.m
+      - path: Sources/MTPDeviceRegistration/device_registration.h
+        buildPhase: none
+    resources:
+      - path: Resources
+      - path: Assets.xcassets
+      - path: Vendor/licenses
+      - path: THIRD_PARTY_NOTICES.md
+    info:
+      path: Config/Info.plist
+    entitlements:
+      path: MTPBridge.entitlements
+    settings:
+      base:
+        SWIFT_OBJC_BRIDGING_HEADER: $(SRCROOT)/Sources/MTPBridgeApp/MTPBridge-Bridging-Header.h
+        HEADER_SEARCH_PATHS: $(inherited) $(SRCROOT)/Sources/MTPBridgeCLib/include $(SRCROOT)/Sources/MTPDeviceRegistration $(SRCROOT)/Vendor/include
+        LIBRARY_SEARCH_PATHS: $(inherited) $(SRCROOT)/Vendor/lib
+        OTHER_LDFLAGS: $(inherited) -lmtp -lusb-1.0 -framework ServiceManagement -framework CoreFoundation
+    preBuildScripts:
+      - name: Embed and sign libmtp dependencies
+        script: |
+          "$SRCROOT/Scripts/embed-dylibs.sh"
+        basedOnDependencyAnalysis: false
+        inputFiles:
+          - $(SRCROOT)/Vendor/lib/libmtp.dylib
+          - $(SRCROOT)/Vendor/lib/libusb-1.0.dylib
+        outputFiles:
+          - $(TARGET_BUILD_DIR)/$(FRAMEWORKS_FOLDER_PATH)/libmtp.dylib
+          - $(TARGET_BUILD_DIR)/$(FRAMEWORKS_FOLDER_PATH)/libusb-1.0.dylib
+    postBuildScripts:
+      - name: Embed hidden Android device-insertion login item
+        script: |
+          set -euo pipefail
+          AGENT_SOURCE="$BUILT_PRODUCTS_DIR/Android 傳輸 V2 裝置偵測器.app"
+          AGENT_DEST="$TARGET_BUILD_DIR/$CONTENTS_FOLDER_PATH/Library/LoginItems/Android 傳輸 V2 裝置偵測器.app"
+          test -d "$AGENT_SOURCE"
+          rm -rf "$AGENT_DEST"
+          mkdir -p "$(dirname "$AGENT_DEST")"
+          ditto "$AGENT_SOURCE" "$AGENT_DEST"
+        basedOnDependencyAnalysis: false
+        inputFiles:
+          - $(BUILT_PRODUCTS_DIR)/Android 傳輸 V2 裝置偵測器.app
+        outputFiles:
+          - $(TARGET_BUILD_DIR)/$(CONTENTS_FOLDER_PATH)/Library/LoginItems/Android 傳輸 V2 裝置偵測器.app
+    scheme:
+      testTargets: []
+      gatherCoverageData: false

@@ -1,0 +1,204 @@
+"common.cancel" = "Cancel";
+"common.create" = "Create";
+"common.error" = "Something Went Wrong";
+"common.ok" = "OK";
+"common.rename" = "Rename";
+
+"command.new_folder" = "New Folder";
+"command.transfer" = "Transfer";
+"command.upload" = "Upload…";
+"command.download" = "Download…";
+"command.refresh" = "Refresh";
+"command.cancel_active" = "Cancel Active Transfer";
+
+"connection.empty.title" = "Connect an Android phone";
+"connection.empty.message" = "Android Transfer V2 will show the phone's shared storage here without mounting it as a disk.";
+"connection.searching.title" = "Looking for a phone";
+"connection.searching.message" = "Checking USB devices for an available MTP session.";
+"connection.connecting.title" = "Opening the phone";
+"connection.connecting.message" = "Keep the phone unlocked while the MTP session is established.";
+"connection.failed.title" = "The phone could not be opened";
+"connection.retry" = "Try Again";
+"connection.step.unlock" = "Unlock the Android phone.";
+"connection.step.usb_mode" = "In the USB notification, choose File transfer / Android Auto.";
+"connection.step.permission" = "Approve any access prompt shown on the phone.";
+
+"sidebar.device" = "Device";
+"sidebar.storage" = "Storage";
+"sidebar.activity" = "Activity";
+"sidebar.transfers" = "Transfers";
+"sidebar.capabilities" = "Protection";
+"sidebar.resume_download" = "Resumable downloads";
+"sidebar.safe_replace" = "Safe upload replacement";
+"storage.free_format" = "%@ free of %@";
+
+"browser.root" = "Storage";
+"browser.search" = "Search this folder";
+"browser.up" = "Up";
+"browser.refresh" = "Refresh";
+"browser.new_folder" = "New Folder";
+"browser.upload" = "Upload";
+"browser.download" = "Download";
+"browser.rename" = "Rename";
+"browser.delete" = "Delete";
+"browser.open" = "Open";
+"browser.sort" = "Sort";
+"browser.drop_to_upload" = "Drop to upload";
+"browser.column.name" = "Name";
+"browser.column.size" = "Size";
+"browser.column.modified" = "Modified";
+"browser.empty.title" = "This folder is empty";
+"browser.empty.message" = "Drag files here or use Upload in the toolbar.";
+"browser.no_results.title" = "No matching files";
+"browser.no_results.message" = "Try a different search term.";
+
+"sort.name" = "Name";
+"sort.size" = "Size";
+"sort.date" = "Date Modified";
+
+"folder.new.title" = "New Folder";
+"folder.new.placeholder" = "Folder name";
+"rename.title" = "Rename Item";
+"rename.placeholder" = "New name";
+"delete.confirm.title" = "Delete selected items?";
+"delete.confirm.message" = "%d selected item(s) will be permanently deleted from the phone.";
+"delete.confirm.button" = "Delete";
+
+"upload.panel.title" = "Choose files or folders to upload";
+"upload.panel.prompt" = "Upload";
+"download.panel.title" = "Choose a download folder";
+"download.panel.prompt" = "Download Here";
+
+"transfer.title" = "Transfers";
+"transfer.count_format" = "%d items";
+"transfer.cancel" = "Cancel transfer";
+"transfer.retry" = "Retry";
+"transfer.remove" = "Remove from list";
+"transfer.show_in_finder" = "Show in Finder";
+"transfer.clear_finished" = "Clear Finished";
+"transfer.all_completed" = "All transfers completed";
+"transfer.has_failures" = "Some transfers need attention";
+"transfer.idle" = "No active transfers";
+"transfer.cancelled" = "Transfer cancelled";
+"transfer.state.queued" = "Waiting";
+"transfer.state.preparing" = "Preparing";
+"transfer.state.running" = "Transferring";
+"transfer.state.retrying" = "Retrying · attempt %d of %d";
+"transfer.state.completed" = "Completed";
+"transfer.state.failed" = "Failed";
+"transfer.state.cancelled" = "Cancelled";
+
+"error.no_open_device" = "No Android phone is open.";
+"error.no_device_connected" = "No Android phone is connected in File transfer mode.";
+"error.generic_mtp" = "The phone returned an MTP error.";
+"error.cancellation_token" = "The transfer could not create a cancellation token.";
+"error.transfer_engine_not_configured" = "The transfer engine is not connected to a device session.";
+"error.symbolic_link" = "Symbolic links are skipped because they can point outside the selected folder.";
+"error.unsupported_local_item" = "The selected local item is not a regular file or folder.";
+"error.upload_parent_missing" = "A destination folder could not be created on the phone.";
+"error.remote_type_conflict" = "“%@” already exists on the phone as a different kind of item.";
+"error.download_size_mismatch" = "Download verification failed for %@. Expected %llu bytes, received %llu bytes.";
+"error.name_exists" = "An item named “%@” already exists in this folder.";
+"error.filename.empty" = "Enter a name.";
+"error.filename.reserved" = "That name is reserved.";
+"error.filename.separator" = "Names cannot contain slash or colon characters.";
+"error.filename.control" = "Names cannot contain control characters.";
+"error.filename.long" = "That name is too long for reliable MTP transfer.";
+"error.transfer_unbound_device" = "This queued transfer is not bound to a verified phone. Remove it and create a new transfer.";
+"error.transfer_wrong_device" = "This transfer belongs to a different Android phone. Connect the original phone, then retry.";
+
+// Android Transfer V2 0.4.0
+"command.delete_selected" = "Delete Selected Items";
+"connection.activity" = "Checking the USB connection…";
+"browser.loading" = "Loading folder…";
+"browser.column.type" = "Type";
+"browser.column.created" = "Date Created";
+"browser.date.loading" = "Reading…";
+"browser.date.loading.help" = "Reading the optional MTP creation date without delaying the initial folder listing.";
+"browser.date.unavailable" = "Not provided";
+"browser.date.unavailable.help" = "This Android MTP provider did not report a creation date.";
+"browser.delete_selected" = "Delete Selected";
+"browser.delete.help" = "Permanently delete the selected items from the phone";
+"sort.type" = "Type";
+"sort.created" = "Date Created";
+"sort.modified" = "Date Modified";
+"sort.ascending" = "Ascending";
+"sort.descending" = "Descending";
+"transfer.expand" = "Show transfer details";
+"transfer.collapse" = "Hide transfer details";
+"transfer.close" = "Close transfer panel";
+"transfer.phase.finalizing" = "Finishing…";
+"file.type.folder" = "Folder";
+"file.type.image" = "Image";
+"file.type.video" = "Video";
+"file.type.audio" = "Audio";
+"file.type.pdf" = "PDF document";
+"file.type.archive" = "Archive";
+"file.type.document" = "Document";
+"file.type.application" = "Application";
+"file.type.file" = "File";
+"error.drag_export_unavailable" = "This item is no longer available for dragging.";
+"error.drag_export_missing" = "The temporary Finder export could not be created.";
+
+// Android Transfer V2 0.4.1 — navigation and toolbar guidance
+"command.navigation" = "Go";
+"browser.back" = "Back";
+"browser.forward" = "Forward";
+"browser.back.help" = "Return to the previous folder (Command-[ or mouse Back button)";
+"browser.forward.help" = "Go to the next folder (Command-] or mouse Forward button)";
+"browser.up.help" = "Open the parent folder (Command-Up Arrow)";
+"browser.refresh.help" = "Reload the current phone folder";
+"browser.new_folder.help" = "Create a folder on the phone";
+"browser.upload.help" = "Choose Mac files or folders to upload to the phone";
+"browser.download.help" = "Download the selected phone items to the Mac";
+"browser.sort.help" = "Choose the sort field and direction";
+"browser.rename.help" = "Rename the selected item on the phone";
+"browser.search.help" = "Search names in the current phone folder";
+"browser.clear_search.help" = "Clear the current search";
+
+// Android Transfer V2 0.5.0 — optional embedded login item
+
+// Android Transfer V2 0.6.0 — exact Finder file-promise destinations
+"error.file_promise_destination_exists" = "Finder's promised destination already exists and will not be overwritten: %@";
+"error.file_promise_type_mismatch" = "Finder's promised item was not created with the expected file or folder type: %@";
+
+"view.text_size" = "Text Size";
+
+"view.text_size.small" = "Small";
+
+"view.text_size.medium" = "Medium";
+
+"view.text_size.large" = "Large";
+"sidebar.storage_usage" = "Storage usage";
+
+// Device insertion auto-open
+"device_watcher.section.title" = "Open When Phone Is Connected";
+"device_watcher.toggle" = "Open Android Transfer V2 when an MTP phone is connected";
+"device_watcher.explanation" = "A hidden device agent stays in the background without opening the main app. It listens for USB insertion events and opens Android Transfer V2 only when a new Android MTP phone is connected. Quitting the main app with Command+Q does not stop the agent.";
+"device_watcher.status.enabled" = "Phone-insertion detection is enabled.";
+"device_watcher.status.disabled" = "Phone-insertion detection is disabled.";
+"device_watcher.status.requires_approval" = "macOS requires approval in Login Items settings.";
+"device_watcher.status.unavailable" = "The built-in phone-insertion agent is missing from this app bundle.";
+"device_watcher.status.failed" = "Phone-insertion detection could not be changed: %@";
+"device_watcher.open_settings" = "Open Login Items Settings";
+
+"device_watcher.status.enabled_compatibility" = "Phone-insertion detection is running. Compatibility login registration is being used for local builds.";
+"device_watcher.registration_failed" = "The hidden device agent could not be started or registered.";
+
+// MTP ownership / legacy Android File Transfer coexistence
+"connection.conflict.title" = "Another MTP app is active";
+"connection.conflict.message" = "An MTP phone can be used reliably by only one application at a time. To avoid competing for the USB interface or forcing the phone back to charge-only mode, Android Transfer V2 will not open an MTP session yet.";
+"connection.conflict.detected" = "Running: %@";
+"connection.conflict.explanation" = "Only the visible Android File Transfer viewer needs to quit. Its background Android File Transfer Agent may remain running: it watches for phone insertion and launches the old viewer, but it is not treated as the MTP-session owner. The button below temporarily quits only the old viewer and does not disable the Agent or change Login Items.";
+"connection.conflict.stop_legacy" = "Temporarily Stop Android File Transfer";
+"connection.conflict.could_not_stop" = "The old Android File Transfer viewer could not be quit. Quit the visible Android File Transfer app with Command+Q and retry; you do not need to stop Android File Transfer Agent.";
+
+"error.upload_destination_changed" = "The destination folder changed or is no longer available. Reopen the folder on the phone and try the upload again.";
+"error.legacy_upload_requires_redrag" = "This upload was created by an older Android Transfer V2 version and cannot be resumed safely. Drag the file into the phone again.";
+
+"transfer.pause" = "Pause transfer";
+"transfer.resume" = "Resume transfer";
+"transfer.terminate" = "End transfer";
+"transfer.delete_job" = "Delete transfer record";
+"transfer.state.paused" = "Paused";
+"transfer.has_paused" = "Transfer paused";

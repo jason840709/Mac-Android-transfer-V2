@@ -1,0 +1,43 @@
+--- a/src/libusb1-glue.c	2025-03-30 11:55:31.000000000 +0000
++++ b/src/libusb1-glue.c	2026-08-21 05:15:51.806138001 +0000
+@@ -2108,7 +2108,11 @@
+      * on devices when engineered and often error prone.
+      * Reset may help some.
+      */
++#ifndef __APPLE__
+     libusb_reset_device (ptp_usb->handle);
++#else
++    LIBMTP_ERROR("LIBMTP macOS: skipping force-reset-on-close to preserve Android USB gadget mode\n");
++#endif
+   }
+   libusb_close(ptp_usb->handle);
+ }
+@@ -2307,6 +2311,20 @@
+    * have not used LIBMTP_Release_Device on exit
+    */
+   if ((ret = ptp_opensession(params, 1)) == PTP_ERROR_IO) {
++#ifdef __APPLE__
++    /*
++     * Resetting an Android USB gadget here can tear down the freshly selected
++     * MTP configuration and make the phone fall back to charge-only. On macOS
++     * a competing MTP client is also a common cause of PTP_ERROR_IO, so fail
++     * cleanly and let the application arbitrate/retry instead of resetting the
++     * physical USB device.
++     */
++    LIBMTP_ERROR("LIBMTP macOS: failed to open MTP session; refusing USB reset and returning connecting error\n");
++    close_usb(ptp_usb);
++    libusb_free_device_list (devs, 0);
++    free (ptp_usb);
++    return LIBMTP_ERROR_CONNECTING;
++#else
+     LIBMTP_ERROR("PTP_ERROR_IO: failed to open session, trying again after resetting USB interface\n");
+     LIBMTP_ERROR("LIBMTP libusb: Attempt to reset device\n");
+     libusb_reset_device (ptp_usb->handle);
+@@ -2327,6 +2345,7 @@
+       free (ptp_usb);
+       return LIBMTP_ERROR_CONNECTING;
+     }
++#endif
+   }
+ 
+   /* Was the transaction id invalid? Try again */

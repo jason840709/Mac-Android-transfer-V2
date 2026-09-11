@@ -1,0 +1,53 @@
+name: Bug report
+description: 回報 Android 傳輸 V2 的可重現問題
+title: "[Bug] "
+labels: [bug]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        感謝回報。請不要上傳私人檔案、security-scoped bookmark、完整本機路徑、完整手機序號或其他敏感資料。
+  - type: input
+    id: version
+    attributes:
+      label: Android 傳輸 V2 版本
+      placeholder: 例如 0.7.0
+    validations:
+      required: true
+  - type: input
+    id: macos
+    attributes:
+      label: macOS 版本與 Mac 型號
+      placeholder: 例如 macOS 15.x / Apple Silicon
+    validations:
+      required: true
+  - type: input
+    id: android
+    attributes:
+      label: Android 手機與 Android 版本
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: 重現步驟
+      description: 請依序描述如何觸發問題。
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: 預期結果
+    validations:
+      required: true
+  - type: textarea
+    id: actual
+    attributes:
+      label: 實際結果
+    validations:
+      required: true
+  - type: textarea
+    id: logs
+    attributes:
+      label: 已去識別化的日誌（可選）
+      description: 請先移除私人路徑、bookmark、裝置序號與其他敏感資訊。

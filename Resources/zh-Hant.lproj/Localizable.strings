@@ -1,0 +1,204 @@
+"common.cancel" = "取消";
+"common.create" = "建立";
+"common.error" = "發生問題";
+"common.ok" = "好";
+"common.rename" = "重新命名";
+
+"command.new_folder" = "新增資料夾";
+"command.transfer" = "傳輸";
+"command.upload" = "上傳…";
+"command.download" = "下載…";
+"command.refresh" = "重新整理";
+"command.cancel_active" = "取消目前傳輸";
+
+"connection.empty.title" = "連接 Android 手機";
+"connection.empty.message" = "Android 傳輸 V2 會直接顯示手機的共享儲存空間，不需要把手機掛載成磁碟。";
+"connection.searching.title" = "正在尋找手機";
+"connection.searching.message" = "正在檢查 USB 裝置是否提供可用的 MTP 連線。";
+"connection.connecting.title" = "正在開啟手機";
+"connection.connecting.message" = "建立 MTP 連線時，請讓手機保持解鎖。";
+"connection.failed.title" = "無法開啟手機";
+"connection.retry" = "再試一次";
+"connection.step.unlock" = "解鎖 Android 手機。";
+"connection.step.usb_mode" = "在 USB 通知中選擇「檔案傳輸／Android Auto」。";
+"connection.step.permission" = "允許手機上出現的存取要求。";
+
+"sidebar.device" = "裝置";
+"sidebar.storage" = "儲存空間";
+"sidebar.activity" = "活動";
+"sidebar.transfers" = "傳輸";
+"sidebar.capabilities" = "保護機制";
+"sidebar.resume_download" = "下載續傳";
+"sidebar.safe_replace" = "安全替換上傳";
+"storage.free_format" = "可用 %@，共 %@";
+
+"browser.root" = "儲存空間";
+"browser.search" = "搜尋此資料夾";
+"browser.up" = "上一層";
+"browser.refresh" = "重新整理";
+"browser.new_folder" = "新增資料夾";
+"browser.upload" = "上傳";
+"browser.download" = "下載";
+"browser.rename" = "重新命名";
+"browser.delete" = "刪除";
+"browser.open" = "開啟";
+"browser.sort" = "排序";
+"browser.drop_to_upload" = "放開以上傳";
+"browser.column.name" = "名稱";
+"browser.column.size" = "大小";
+"browser.column.modified" = "修改日期";
+"browser.empty.title" = "這個資料夾是空的";
+"browser.empty.message" = "把檔案拖到這裡，或使用工具列的「上傳」。";
+"browser.no_results.title" = "找不到相符項目";
+"browser.no_results.message" = "請嘗試其他搜尋字詞。";
+
+"sort.name" = "名稱";
+"sort.size" = "大小";
+"sort.date" = "修改日期";
+
+"folder.new.title" = "新增資料夾";
+"folder.new.placeholder" = "資料夾名稱";
+"rename.title" = "重新命名項目";
+"rename.placeholder" = "新名稱";
+"delete.confirm.title" = "要刪除所選項目嗎？";
+"delete.confirm.message" = "將從手機永久刪除 %d 個所選項目。";
+"delete.confirm.button" = "刪除";
+
+"upload.panel.title" = "選擇要上傳的檔案或資料夾";
+"upload.panel.prompt" = "上傳";
+"download.panel.title" = "選擇下載資料夾";
+"download.panel.prompt" = "下載到這裡";
+
+"transfer.title" = "傳輸";
+"transfer.count_format" = "%d 個項目";
+"transfer.cancel" = "取消傳輸";
+"transfer.retry" = "重試";
+"transfer.remove" = "從列表移除";
+"transfer.show_in_finder" = "在 Finder 中顯示";
+"transfer.clear_finished" = "清除已完成";
+"transfer.all_completed" = "所有傳輸均已完成";
+"transfer.has_failures" = "部分傳輸需要處理";
+"transfer.idle" = "目前沒有傳輸";
+"transfer.cancelled" = "傳輸已取消";
+"transfer.state.queued" = "等待中";
+"transfer.state.preparing" = "準備中";
+"transfer.state.running" = "傳輸中";
+"transfer.state.retrying" = "正在重試，第 %d／%d 次";
+"transfer.state.completed" = "已完成";
+"transfer.state.failed" = "失敗";
+"transfer.state.cancelled" = "已取消";
+
+"error.no_open_device" = "目前沒有已開啟的 Android 手機。";
+"error.no_device_connected" = "找不到已切換到檔案傳輸模式的 Android 手機。";
+"error.generic_mtp" = "手機回傳了 MTP 錯誤。";
+"error.cancellation_token" = "無法建立傳輸取消權杖。";
+"error.transfer_engine_not_configured" = "傳輸引擎尚未連接到裝置工作階段。";
+"error.symbolic_link" = "符號連結可能指向所選資料夾之外，因此不會傳輸。";
+"error.unsupported_local_item" = "所選項目不是一般檔案或資料夾。";
+"error.upload_parent_missing" = "無法在手機上建立目的資料夾。";
+"error.remote_type_conflict" = "手機上已有名為「%@」但類型不同的項目。";
+"error.download_size_mismatch" = "%@ 的下載驗證失敗。預期 %llu 位元組，實際收到 %llu 位元組。";
+"error.name_exists" = "此資料夾已有名為「%@」的項目。";
+"error.filename.empty" = "請輸入名稱。";
+"error.filename.reserved" = "這個名稱是保留名稱。";
+"error.filename.separator" = "名稱不能包含斜線或冒號。";
+"error.filename.control" = "名稱不能包含控制字元。";
+"error.filename.long" = "名稱太長，可能無法可靠地透過 MTP 傳輸。";
+"error.transfer_unbound_device" = "這個佇列工作沒有綁定到已驗證的手機。請移除它並重新建立傳輸。";
+"error.transfer_wrong_device" = "這個傳輸屬於另一支 Android 手機。請接回原本的手機後再重試。";
+
+// Android Transfer V2 0.4.0
+"command.delete_selected" = "刪除所選項目";
+"connection.activity" = "正在檢查 USB 連線…";
+"browser.loading" = "正在載入資料夾…";
+"browser.column.type" = "類型";
+"browser.column.created" = "建立日期";
+"browser.date.loading" = "讀取中…";
+"browser.date.loading.help" = "正在背景讀取選用的 MTP 建立日期，不延遲資料夾初始顯示。";
+"browser.date.unavailable" = "裝置未提供";
+"browser.date.unavailable.help" = "這支 Android 手機的 MTP 介面沒有提供建立日期。";
+"browser.delete_selected" = "刪除所選項目";
+"browser.delete.help" = "從手機永久刪除所選項目";
+"sort.type" = "類型";
+"sort.created" = "建立日期";
+"sort.modified" = "修改日期";
+"sort.ascending" = "遞增";
+"sort.descending" = "遞減";
+"transfer.expand" = "顯示傳輸詳細資料";
+"transfer.collapse" = "隱藏傳輸詳細資料";
+"transfer.close" = "關閉傳輸面板";
+"transfer.phase.finalizing" = "正在完成…";
+"file.type.folder" = "資料夾";
+"file.type.image" = "圖片";
+"file.type.video" = "影片";
+"file.type.audio" = "音訊";
+"file.type.pdf" = "PDF 文件";
+"file.type.archive" = "壓縮檔";
+"file.type.document" = "文件";
+"file.type.application" = "應用程式";
+"file.type.file" = "檔案";
+"error.drag_export_unavailable" = "這個項目已無法拖曳匯出。";
+"error.drag_export_missing" = "無法建立供 Finder 使用的暫存匯出項目。";
+
+// Android 傳輸 V2 0.4.1 — 導覽與工具列提示
+"command.navigation" = "前往";
+"browser.back" = "上一頁";
+"browser.forward" = "下一頁";
+"browser.back.help" = "回到上一個資料夾（Command-[ 或滑鼠上一頁側鍵）";
+"browser.forward.help" = "前往下一個資料夾（Command-] 或滑鼠下一頁側鍵）";
+"browser.up.help" = "開啟上一層資料夾（Command-↑）";
+"browser.refresh.help" = "重新載入目前手機資料夾";
+"browser.new_folder.help" = "在手機上建立新資料夾";
+"browser.upload.help" = "選擇要從 Mac 上傳到手機的檔案或資料夾";
+"browser.download.help" = "把手機上所選項目下載到 Mac";
+"browser.sort.help" = "選擇排序欄位與遞增／遞減方向";
+"browser.rename.help" = "重新命名手機上所選項目";
+"browser.search.help" = "搜尋目前手機資料夾中的名稱";
+"browser.clear_search.help" = "清除目前搜尋內容";
+
+// Android 傳輸 V2 0.5.0 — 選用的內嵌登入項目
+
+// Android 傳輸 V2 0.6.0 — Finder 精確承諾目的位置
+"error.file_promise_destination_exists" = "Finder 提供的承諾目的項目已存在，程式不會擅自覆寫：%@";
+"error.file_promise_type_mismatch" = "Finder 的承諾項目沒有建立成預期的檔案或資料夾類型：%@";
+
+"view.text_size" = "文字大小";
+
+"view.text_size.small" = "小";
+
+"view.text_size.medium" = "中";
+
+"view.text_size.large" = "大";
+"sidebar.storage_usage" = "儲存空間使用比例";
+
+// Device insertion auto-open
+"device_watcher.section.title" = "插入手機時自動開啟";
+"device_watcher.toggle" = "插入 MTP 手機時開啟 Android 傳輸 V2";
+"device_watcher.explanation" = "隱藏的裝置偵測器會留在背景，但不會打開主 App。它使用 USB 插入事件偵測新接上的 Android MTP 手機，只有手機插入時才會開啟 Android 傳輸 V2；即使以 Command+Q 關閉主 App，背景偵測器仍會繼續執行。";
+"device_watcher.status.enabled" = "手機插入偵測已啟用。";
+"device_watcher.status.disabled" = "手機插入偵測已停用。";
+"device_watcher.status.requires_approval" = "macOS 需要你在「登入項目」設定中核准。";
+"device_watcher.status.unavailable" = "這個 App 套件缺少內建的手機插入偵測器。";
+"device_watcher.status.failed" = "無法變更手機插入偵測設定：%@";
+"device_watcher.open_settings" = "開啟登入項目設定";
+
+"device_watcher.status.enabled_compatibility" = "手機插入偵測正在背景執行。本機建置目前使用相容登入項目模式。";
+"device_watcher.registration_failed" = "隱藏的手機插入偵測器無法啟動或註冊。";
+
+// MTP ownership / legacy Android File Transfer coexistence
+"connection.conflict.title" = "偵測到另一個 MTP 程式";
+"connection.conflict.message" = "MTP 手機同一時間只能由一個程式穩定使用。為避免 USB 介面互相搶占或讓手機重新切回充電模式，Android 傳輸 V2 目前不會開啟 MTP 工作階段。";
+"connection.conflict.detected" = "正在執行：%@";
+"connection.conflict.explanation" = "只需要關閉可見的舊版 Android File Transfer 主程式；背景的 Android File Transfer Agent 可以保留，它只負責偵測手機並啟動舊主程式，不會被視為 MTP 工作階段的擁有者。下方按鈕只暫時關閉舊主程式，不會停用背景 Agent 或修改登入項目。";
+"connection.conflict.stop_legacy" = "暫時關閉舊 Android File Transfer";
+"connection.conflict.could_not_stop" = "無法關閉舊 Android File Transfer 主程式。請先用 Command+Q 關閉舊主程式再重試；不需要結束 Android File Transfer Agent。";
+
+"error.upload_destination_changed" = "手機上的目的資料夾已變更或目前無法使用。請重新開啟該資料夾後再重試上傳。";
+"error.legacy_upload_requires_redrag" = "這筆上傳工作由舊版 Android 傳輸 V2 建立，無法安全續傳。請重新把檔案拖進手機。";
+
+"transfer.pause" = "暫停傳輸";
+"transfer.resume" = "繼續傳輸";
+"transfer.terminate" = "終止傳輸";
+"transfer.delete_job" = "刪除傳輸紀錄";
+"transfer.state.paused" = "已暫停";
+"transfer.has_paused" = "傳輸已暫停";
